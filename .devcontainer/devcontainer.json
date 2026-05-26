@@ -1,0 +1,27 @@
+{
+  "name": "Java 11 - Spring Boot - JUnit 5",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-boot-dashboard",
+        "vscjava.vscode-spring-initializr",
+        "vscjava.vscode-spring-boot",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven"
+      ],
+      "settings": {
+        "extensions.ignoreRecommendations": true,
+        "extensions.autoCheckUpdates": false,
+        "extensions.autoUpdate": false,
+        "extensions.showRecommendationsOnlyOnDemand": true,
+        "workbench.settings.enableNaturalLanguageSearch": false
+      }
+    }
+  },
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/post-create.sh ${containerWorkspaceFolder}",
+  "remoteUser": "vscode"
+}
