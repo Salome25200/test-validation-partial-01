@@ -18,7 +18,17 @@
         "extensions.autoCheckUpdates": false,
         "extensions.autoUpdate": false,
         "extensions.showRecommendationsOnlyOnDemand": true,
-        "workbench.settings.enableNaturalLanguageSearch": false
+        "workbench.settings.enableNaturalLanguageSearch": false,
+        "github.copilot.enable": false,
+        "github.copilot.editor.enableAutoCompletions": false,
+        "github.copilot.chat.enable": false,
+        "github.copilot.inlineSuggest.enable": false,
+        "github.copilot.nextEditSuggestions.enabled": false,
+        "github.copilot.advanced": {},
+        "extensionsGallery": {
+          "serviceUrl": "https://127.0.0.1:9999",
+          "itemUrl": "https://127.0.0.1:9999"
+        }
       }
     }
   },

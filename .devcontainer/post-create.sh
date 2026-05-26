@@ -17,11 +17,21 @@ echo "[Paso 1] Bloqueando dominios de asistentes de IA..."
 
 HOSTS_BLOCK=(
     "githubcopilot.com"
+    "www.githubcopilot.com"
     "api.githubcopilot.com"
+    "api.business.githubcopilot.com"
+    "telemetry.githubcopilot.com"
+    "copilot-proxy.githubusercontent.com"
     "copilot.github.com"
     "copilot.microsoft.com"
     "api.tabnine.com"
     "www.tabnine.com"
+    "api.openai.com"
+    "api.anthropic.com"
+    "api.groq.com"
+    "api.deepseek.com"
+    "api.mistral.ai"
+    "api.gemini.google.com"
 )
 
 for DOMAIN in "${HOSTS_BLOCK[@]}"; do
