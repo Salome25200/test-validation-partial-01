@@ -1,4 +1,4 @@
-package ec.edu.epn.skyroute.service;
+package ec.edu.epn.service;
 
 /**
  * Servicio externo que verifica el estatus del pasajero en el sistema.

@@ -1,4 +1,4 @@
-package ec.edu.epn.skyroute.service;
+package ec.edu.epn.service;
 
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,12 @@ public class BaggageFeeCalculator {
 
     private final PassengerService passengerService;
 
-    public BaggageFeeCalculator(PassengerService passengerService) {
+    public BaggageFeeCalculator(PassengerService passengerService, double weight, int bagCount, Long passengerId, double totalBase) {
         this.passengerService = passengerService;
+        this.weight = weight;
+        this.bagCount = bagCount;
+        this.passengerId = passengerId;
+        this.totalBase = totalBase;
     }
 
     /**
@@ -33,8 +37,38 @@ public class BaggageFeeCalculator {
      * @return costo total en dólares
      * @throws IllegalArgumentException si los parámetros no cumplen las restricciones
      */
+
+    private double weight;
+    private int bagCount;
+    private Long passengerId;
+    private double totalBase;
+
+
     public double calculateFee(double weight, int bagCount, Long passengerId) {
-        // TODO: Implementar lógica de negocio y validación de excepciones
+
+        //Cada maleta tiene el costo de $30.0
+        double totalBase = bagCount * 30.0;
+
+        //Para el exceso de peso
+
+            if (weight > 23) {
+                totalBase = totalBase + 50.00;
+            }
+
+
+        //Para el beneficio VIP
+
+            if (passengerId != null && passengerService.isVip(passengerId) && weight <= 23) {
+                totalBase = totalBase - 30.0;
+            }
+
+
+        //Para las restricciones mencionadas
+        if (weight <=0 || bagCount <1 || passengerId == null){
+             throw new IllegalArgumentException("Parámetros de equipaje inválidos");
+        }
+
         return 0.0;
     }
+
 }
